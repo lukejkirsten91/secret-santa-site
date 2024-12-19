@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Person 1 - Dingat 3</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>Almost there!</h1>
+<p>Last one! This time you need two answers:</p>
+<ol>
+  <li>The answer to this puzzle (Person 1’s final puzzle)</li>
+  <li>The final puzzle answer of the other person (Person 2)</li>
+</ol>
+
+<img src="p1.3.jpg" alt="Dingat 3" style="max-width:100%;height:auto;">
+
+<p>Answer #1 (this puzzle):</p>
+<input type="text" id="answer1" placeholder="Your puzzle guess">
+
+<p>Answer #2 (the other person's final answer):</p>
+<input type="text" id="answer2" placeholder="Other person's final answer">
+
+<button onclick="checkAnswers()">Submit</button>
+
+<div id="nextStep" class="hidden">
+  <p>Fantastic! You're done with all the Christmas puzzles!</p>
+  <p><a href="p1_final.html">Reveal Your Gift</a></p>
+</div>
+
+<script>
+function checkAnswers() {
+  var ans1 = document.getElementById('answer1').value.trim().toLowerCase().replace(/\s+/g, '');
+  var ans2 = document.getElementById('answer2').value.trim().toLowerCase().replace(/\s+/g, '');
+  
+  // Person 1 final: grinch
+  // Person 2 final: advent
+  if (ans1 === 'grinch' && ans2 === 'advent') {
+    document.getElementById('nextStep').classList.remove('hidden');
+  } else {
+    alert('One or both answers are incorrect. Try again!');
+  }
+}
+</script>
+
+</body>
+</html>

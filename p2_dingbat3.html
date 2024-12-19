@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Person 2 - Final Puzzle</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>Final Puzzle!</h1>
+<p>This is the last one. You need two answers this time:</p>
+<ol>
+  <li>Your puzzle answer (Person 2’s final puzzle)</li>
+  <li>The other person's final puzzle answer (Person 1’s final)</li>
+</ol>
+
+<img src="p2.3.jpg" alt="Dingat 3" style="max-width:100%;height:auto;">
+
+<p>Answer #1 (this puzzle):</p>
+<input type="text" id="answer1" placeholder="Your puzzle guess">
+
+<p>Answer #2 (other person's final answer):</p>
+<input type="text" id="answer2" placeholder="Other person's final answer">
+
+<button onclick="checkAnswers()">Submit</button>
+
+<div id="nextStep" class="hidden">
+  <p>Fantastic! You've solved all the puzzles!</p>
+  <p><a href="p2_final.html">Reveal Your Gift</a></p>
+</div>
+
+<script>
+function checkAnswers() {
+  var ans1 = document.getElementById('answer1').value.trim().toLowerCase().replace(/\s+/g, '');
+  var ans2 = document.getElementById('answer2').value.trim().toLowerCase().replace(/\s+/g, '');
+  
+  // Person 2 final: advent
+  // Person 1 final: grinch
+  if (ans1 === 'advent' && ans2 === 'grinch') {
+    document.getElementById('nextStep').classList.remove('hidden');
+  } else {
+    alert('One or both answers are incorrect. Try again!');
+  }
+}
+</script>
+</body>
+</html>

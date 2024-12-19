@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Person 2 - Puzzle 1</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>Hi Becky, you didn't think it would be that easy right? You need to solve 3 Christmas puzzles to get your present.</h1>
+<p>Look at the image below and guess the Christmas-related word:</p>
+<img src="p2.1.jpg" alt="Dingat 1" style="max-width:100%;height:auto;">
+
+<p>Enter your guess:</p>
+<input type="text" id="answer" placeholder="Your guess">
+<button onclick="checkAnswer()">Submit</button>
+
+<div id="nextStep" class="hidden">
+  <p>Correct! On to the next puzzle:</p>
+  <p><a href="p2_dingbat2.html">Go to Puzzle 2</a></p>
+</div>
+
+<script>
+function checkAnswer() {
+  var ans = document.getElementById('answer').value.trim().toLowerCase().replace(/\s+/g, '');
+  // Person 2 puzzle 1 answer: wrappingpaper
+  if (ans === 'wrappingpaper') {
+    document.getElementById('nextStep').classList.remove('hidden');
+  } else {
+    alert('Wrong guess. Try again!');
+  }
+}
+</script>
+
+</body>
+</html>

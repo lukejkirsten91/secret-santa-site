@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hi Steph!</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>Hi Steph, you didn't think it would be that easy right? 3 puzzles for you to solve. Ask for help if you need it.</h1>
+<p>Look at the image below and guess what Christmas-related word or phrase it represents:</p>
+<img src="p1.1.jpg" alt="Dingat 1" style="max-width:100%;height:auto;">
+
+<p>Enter your guess:</p>
+<input type="text" id="passwordInput" placeholder="Your guess">
+<button onclick="checkPassword()">Submit</button>
+
+<div id="nextStep" class="hidden">
+  <p>Correct! On to the next puzzle:</p>
+  <p><a href="p1_dingbat2.html">Go to next puzzle</a></p>
+</div>
+
+<script>
+function checkPassword() {
+  var pass = document.getElementById('passwordInput').value.trim().toLowerCase().replace(/\s+/g, '');
+  if (pass === 'littledonkey') {
+    document.getElementById('nextStep').classList.remove('hidden');
+  } else {
+    alert('Wrong guess. Try again!');
+  }
+}
+</script>
+
+</body>
+</html>

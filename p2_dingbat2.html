@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Person 2 - Puzzle 2</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>Puzzle 2</h1>
+<p>Another image challenge! Enter the Christmas word:</p>
+<img src="p2.2.jpg" alt="Dingat 2" style="max-width:100%;height:auto;">
+
+<input type="text" id="answer" placeholder="Your guess">
+<button onclick="checkAnswer()">Submit</button>
+
+<div id="nextStep" class="hidden">
+  <p>Nicely done! On to the final puzzle:</p>
+  <p><a href="p2_dingbat3.html">Go to Final Puzzle</a></p>
+</div>
+
+<script>
+function checkAnswer() {
+  var ans = document.getElementById('answer').value.trim().toLowerCase().replace(/\s+/g, '');
+  // Person 2 puzzle 2 answer: noel
+  if (ans === 'noel') {
+    document.getElementById('nextStep').classList.remove('hidden');
+  } else {
+    alert('Wrong guess. Try again!');
+  }
+}
+</script>
+</body>
+</html>
